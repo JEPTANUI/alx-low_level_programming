@@ -7,15 +7,14 @@
  *@n: number of elements on array.
  *Return: input
  */
-
 void print_array(int *a, int n)
 {
-	int j;
+	int x;
 
-	for (j = 0 ; j < n; x++)
+	for (x = 0 ; x < n; x++)
 	{
-		printf("%d", a[j]);
-		if (j != n - 1)
+		printf("%d", a[x]);
+		if (x != n - 1)
 		{
 			printf(", ");
 		}
