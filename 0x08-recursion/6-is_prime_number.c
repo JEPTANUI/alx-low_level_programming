@@ -1,7 +1,6 @@
 #include "main.h"
 
-
-
+int actual_prime(int n, int i);
 /**
  * is_prime_number- says if number is integer or not
  * @n: number to evaluate
