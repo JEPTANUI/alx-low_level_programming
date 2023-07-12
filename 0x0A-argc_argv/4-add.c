@@ -31,27 +31,20 @@ int check_num(char *str)
  */
 int main(int argc, char *argv[])
 {
-	/*Declaring variables*/
-	int count;
-	int str_to_int;
-	int sum;
+	int i, j, add = 0;
 
-	count = 1;
-	while (count < argc) /*Goes through the whole array*/
+	for (i = 1; i < argc; i++)
 	{
-		if (check_num(argv[count]))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			str_to_int = atoi(argv[count]); /*ATOI --> convert string to int*/
-			sum += str_to_int;
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		/*Condition if one of the number contains symbols that are not digits*/
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		counter++;
+		add += atoi(argv[i]);
 	}
-	printf("%d\n", sum); /*print sum*/
+	printf("%d\n", add);
 	return (0);
 }
