@@ -10,32 +10,20 @@
  */
 int main(int argc, char *argv[])
 {
-	int num, j, result;
-	int coins[] = {25, 10, 5, 2, 1};
+int i, j, add = 0;
 
-	if (argc != 2)
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
-	}
-	num = atoi(argv[1]);
-	result = 0;
-
-	if (num < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-	for (j = 0; j < 5 && num >= 0; j++)
-	{
-		while (num >= coins[j])
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			result++;
-
-			num -= coins[j];
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
+		add += atoi(argv[i]);
 	}
-	printf("%d\n", result);
-
+	printf("%d\n", add);
 	return (0);
 }
